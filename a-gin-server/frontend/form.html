@@ -1,0 +1,11 @@
+<html>
+    <head>
+        <script src="https://unpkg.com/htmx.org"></script>
+    </head>
+    <body>
+        <form hx-post="/person" hx-trigger="submit" hx-target="#content">
+            <input type="text" name="name" placeholder="Your name">
+            <button>Submit</button>
+        </form>
+    </body>
+</html>
