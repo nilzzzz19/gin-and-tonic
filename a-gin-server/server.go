@@ -12,10 +12,17 @@ type Person struct {
 	IsInterested bool
 }
 
+func sayHello(p *Person) string {
+	return "Hello" + p.Name
+}
+
 func main() {
 
 	p := Person{Name: "john", Age: 20, IsInterested: true}
 
+	s := sayHello(&p)
+
+	fmt.Printf(s)
 	fmt.Printf(p.Name)
 
 	//fmt.Println("Hello World")
@@ -27,6 +34,9 @@ func main() {
 	r.GET("/index", func(c *gin.Context) {
 		c.HTML(200, "index.html", gin.H{})
 	})
+
+	//post a person to the server
+	//r.POST("/person", func())
 
 	// Serve static files. The URL path is "/static" and files are served from the "./frontend" directory.
 	// Adjust the paths according to your directory structure.
